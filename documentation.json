@@ -1,0 +1,130 @@
+{
+  "name": "Bryce Arce",
+  "colors": {
+    "light": {
+      "brand": "#ef7025",
+      "heading": "#ef7025",
+      "text": "#ef7025"
+    },
+    "dark": {
+      "brand": "#F0A070",
+      "heading": "#F0A070",
+      "text": "#F0A070"
+    }
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "icon": "book",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "icon": "rocket",
+            "pages": [
+              {
+                "title": "Introduction",
+                "path": "introduction",
+                "icon": "home"
+              },
+              {
+                "title": "Quick Start",
+                "path": "quickstart",
+                "icon": "zap"
+              }
+            ]
+          },
+          {
+            "group": "Core Concepts",
+            "icon": "layers",
+            "pages": [
+              {
+                "title": "Features",
+                "path": "features",
+                "icon": "star"
+              }
+            ]
+          },
+          {
+            "group": "Guides",
+            "icon": "compass",
+            "pages": [
+              {
+                "title": "Integrations",
+                "path": "integrations",
+                "icon": "plug"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "icon": "code",
+        "groups": [
+          {
+            "group": "Endpoints",
+            "icon": "terminal",
+            "openapi": "api-reference/openapi.yaml",
+            "pages": []
+          }
+        ]
+      },
+      {
+        "tab": "Help Center",
+        "icon": "help-circle",
+        "pages": [
+          {
+            "title": "Help Center",
+            "path": "help-center",
+            "icon": "home"
+          },
+          {
+            "group": "FAQs",
+            "icon": "help-circle",
+            "expandable": false,
+            "pages": [
+              {
+                "title": "What Is Bryce Arce?",
+                "path": "help-center/faq/what-is-bryce-arce"
+              }
+            ]
+          },
+          {
+            "group": "Troubleshooting",
+            "icon": "alert-triangle",
+            "expandable": false,
+            "pages": [
+              {
+                "title": "Cannot Access Documentation",
+                "path": "help-center/troubleshooting/cannot-access-documentation"
+              }
+            ]
+          },
+          {
+            "group": "Guides",
+            "icon": "book-open",
+            "expandable": false,
+            "pages": [
+              {
+                "title": "Organize Projects",
+                "path": "help-center/guides/organize-projects"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Changelog",
+        "icon": "clock",
+        "pages": [
+          {
+            "title": "Release History",
+            "path": "changelog",
+            "icon": "history"
+          }
+        ]
+      }
+    ]
+  }
+}

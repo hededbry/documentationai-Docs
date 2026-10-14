@@ -1,0 +1,162 @@
+---
+title: Integrations
+description: Connect with Google services and other tools for seamless workflows.
+---
+
+## Overview
+
+Bryce Arce integrates seamlessly with Google services and popular tools to enhance your productivity. Sync documents to Google Drive, manage sharing permissions, export to various formats, and receive real-time webhook notifications.
+
+<Columns cols={2}>
+  <Card title="Google Drive Sync" icon="cloud" href="#google-drive-sync">
+    Automatically sync your documents and folders with Google Drive for backup and collaboration.
+  </Card>
+  <Card title="Sharing & Permissions" icon="share-2" href="#sharing">
+    Control access with fine-grained permissions integrated with Google Accounts.
+  </Card>
+  <Card title="Export Formats" icon="download" href="#export">
+    Export content to PDF, DOCX, Markdown, and more for compatibility across tools.
+  </Card>
+  <Card title="Webhook Notifications" icon="zap" href="#webhooks">
+    Get instant updates via webhooks for events like document updates or shares.
+  </Card>
+</Columns>
+
+## Google Drive Sync
+
+Set up bidirectional sync between Bryce Arce and Google Drive to keep your documents up-to-date across platforms.
+
+<Steps>
+  <Step title="Connect Google Account" icon="user">
+    Authorize Bryce Arce to access your Google Drive via OAuth. Visit `https://dashboard.example.com/integrations/drive` and sign in with your Google Account.
+  </Step>
+  <Step title="Select Folders" icon="folder">
+    Choose specific folders or the entire Drive for syncing. Enable real-time updates for changes.
+  </Step>
+  <Step title="Configure Sync Settings" icon="settings">
+    Set sync frequency and conflict resolution rules, such as "keep latest" or "manual merge".
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Use Google Drive labels to organize synced Bryce Arce documents for easy searching.
+</Callout>
+
+## Sharing and Permissions
+
+Manage sharing directly through Google Accounts integration for secure collaboration.
+
+<Tabs>
+  <Tab title="Public Links" icon="globe">
+    Generate shareable links with view, edit, or comment permissions.
+    
+    ```
+    https://docs.example.com/share/your-document-id?mode=edit
+    ```
+  </Tab>
+  <Tab title="Google Groups" icon="users">
+    Share with entire Google Groups for team access.
+    
+    1. Select "Share with Group".
+    2. Enter group email (e.g., `team@yourdomain.com`).
+    3. Set role: Viewer, Editor, or Owner.
+  </Tab>
+  <Tab title="Individual Users" icon="user">
+    Add specific Google users by email with granular permissions.
+    
+    ```
+    npm install @brycearce/sdk
+    ```
+    
+    ```javascript
+    import { BryceArce } from '@brycearce/sdk';
+    
+    const client = new BryceArce({ apiKey: 'YOUR_API_KEY' });
+    await client.documents.share('doc-id', 'user@example.com', 'editor');
+    ```
+  </Tab>
+</Tabs>
+
+## Export to Other Formats
+
+Export your Bryce Arce documents to standard formats for use in other applications.
+
+<CodeGroup tabs="PDF,DOCX,Markdown">
+  ```bash
+  curl -X POST https://api.example.com/v1/documents/export \
+    -H "Authorization: Bearer YOUR_TOKEN" \
+    -d '{"id": "doc-123", "format": "pdf"}' \
+    --output document.pdf
+  ```
+  ```bash
+  curl -X POST https://api.example.com/v1/documents/export \
+    -H "Authorization: Bearer YOUR_TOKEN" \
+    -d '{"id": "doc-123", "format": "docx"}' \
+    --output document.docx
+  ```
+  ```bash
+  curl -X POST https://api.example.com/v1/documents/export \
+    -H "Authorization: Bearer YOUR_TOKEN" \
+    -d '{"id": "doc-123", "format": "markdown"}' \
+    --output document.md
+  ```
+</CodeGroup>
+
+## Webhook Notifications
+
+Set up webhooks to receive real-time notifications for document events.
+
+First, create a webhook endpoint on your server.
+
+<ParamField path="webhookUrl" param-type="string" required="true">
+  Your public HTTPS endpoint to receive payloads (e.g., `https://your-webhook-url.com/brycearce`).
+</ParamField>
+
+<ParamField header="Bryce-Arce-Signature" param-type="string" required="false">
+  HMAC signature for payload verification using your secret.
+</ParamField>
+
+Example payload for a document update:
+
+<Response tabs="200">
+```json
+{
+  "event": "document.updated",
+  "data": {
+    "id": "doc-123",
+    "title": "Updated Document",
+    "updatedAt": "2024-10-15T10:30:00Z"
+  },
+  "timestamp": 1729027800
+}
+```
+</Response>
+
+<Expandable title="Advanced Webhook Verification" default-open="false">
+  Verify signatures to ensure authenticity:
+  
+  ```javascript
+  const crypto = require('crypto');
+  
+  function verifySignature(payload, signature, secret) {
+    const hmac = crypto.createHmac('sha256', secret);
+    hmac.update(payload);
+    return hmac.digest('hex') === signature.replace('sha256=', '');
+  }
+  ```
+</Expandable>
+
+<Callout kind="alert">
+  Always use HTTPS for webhook URLs and verify signatures to prevent unauthorized access.
+</Callout>
+
+## Next Steps
+
+<Columns cols={2}>
+  <Card title="API Reference" icon="code" href="/introduction" horizontal>
+    Dive into full API documentation for advanced integrations.
+  </Card>
+  <Card title="Security Best Practices" icon="shield" href="/authentication" horizontal>
+    Learn secure configuration for all integrations.
+  </Card>
+</Columns>

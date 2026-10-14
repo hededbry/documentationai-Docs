@@ -1,0 +1,120 @@
+---
+title: Changelog
+description: Version history with 2-3 recent updates and improvements.
+---
+
+## Recent Changes
+
+Stay up to date with the latest improvements to Bryce Arce, your documentation space for organizing project docs. Check this changelog for new features, bug fixes, and breaking changes.
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added real-time collaboration for shared documents
+- Integrated Google Accounts login for seamless access
+- Introduced customizable brand colors like `#ef7025`
+
+## Improvements
+
+- Enhanced search with fuzzy matching
+- Faster page loads by `>30%`
+
+## Bug Fixes
+
+- Fixed outline rendering issues
+- Resolved tab switching glitches
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Support for multi-language documents (50+ languages)
+- Added version history with diff viewer
+
+## Bug Fixes
+
+- Corrected font loading errors on reload
+- Fixed share permissions for Google Docs integration
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Core documentation workspace with tabs and outlines
+- Google Accounts authentication
+- Basic file management and sharing
+
+## Breaking Changes
+
+- Updated API endpoints to `https://api.example.com/v1`
+
+</Update>
+
+<Callout kind="info">
+  Always back up your docs before upgrading. Use the latest version for security and performance.
+</Callout>
+
+## Upgrade Guide
+
+Follow these steps to upgrade Bryce Arce to the latest version.
+
+<Steps>
+  <Step title="Backup Your Data" icon="database">
+    Export all documents via the dashboard at `https://dashboard.example.com/export`.
+  </Step>
+  <Step title="Update Package" icon="download">
+    <CodeGroup tabs="npm,yarn">
+````bash
+npm install bryce-arce@latest
+````
+````bash
+yarn add bryce-arce@latest
+````
+    </CodeGroup>
+  </Step>
+  <Step title="Reconfigure" icon="settings">
+    Update your `{API_KEY}` in the config file:
+````javascript
+const config = {
+  apiKey: 'YOUR_API_KEY',
+  baseUrl: 'https://api.example.com'
+};
+````
+  </Step>
+  <Step title="Restart" icon="play">
+    Run `npm start` or restart your server.
+  </Step>
+</Steps>
+
+## Upcoming Roadmap
+
+Track planned features and improvements.
+
+<Board title="Q4 2024 Roadmap">
+  <BoardColumn title="Planned" color="0" icon="calendar">
+    <BoardCard title="AI Doc Assistant" description="Auto-generate outlines" icon="bot" dueDate="2024-12-15" />
+    <BoardCard title="Advanced Permissions" description="Role-based access" icon="shield" />
+  </BoardColumn>
+  <BoardColumn title="In Progress" color="1" icon="loader">
+    <BoardCard title="Mobile App" description="iOS and Android support" icon="smartphone" author="Dev Team" />
+  </BoardColumn>
+  <BoardColumn title="Backlog" color="2" icon="package">
+    <BoardCard title="Webhook Integrations" description="Custom event notifications" icon="zap" createdAt="2024-10-01" />
+  </BoardColumn>
+</Board>
+
+## Next Steps
+
+<Columns cols={2}>
+  <Card title="Quickstart" icon="book-open" href="/quickstart">
+    Get started with Bryce Arce in minutes.
+  </Card>
+  <Card title="Authentication" icon="lock" href="/authentication">
+    Secure your docs with Google Accounts.
+  </Card>
+</Columns>

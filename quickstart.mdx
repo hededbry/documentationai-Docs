@@ -1,0 +1,127 @@
+---
+title: Quickstart Guide
+description: Account setup and first steps using Google sign-in to get users productive immediately.
+---
+
+## Prerequisites
+
+<Callout kind="info">
+
+Before starting, ensure you have:
+- A Google Account (free to create at accounts.google.com)
+- A modern web browser like Chrome, Firefox, or Safari
+
+</Callout>
+
+## Sign In with Google
+
+Follow these steps to access Bryce Arce and create your first documentation space.
+
+<Steps>
+  <Step title="Visit Bryce Arce" icon="globe">
+    Open your browser and navigate to `https://brycearce.com`.
+
+    Click the **Sign In** button in the top right corner.
+  </Step>
+  <Step title="Choose Google Sign-In" icon="log-in">
+    Select **Sign in with Google** from the authentication options.
+
+    Grant permissions for Bryce Arce to access your Google Account for secure, one-click access.
+  </Step>
+  <Step title="Complete Setup" icon="check-circle">
+    After redirection, you'll land on the dashboard.
+
+    Bryce Arce uses your Google Account for simple, secure organization of your docs.
+  </Step>
+</Steps>
+
+## Create Your First Doc Space
+
+Organize projects by creating dedicated documentation spaces.
+
+<Steps>
+  <Step title="New Doc Space" icon="plus">
+    From the dashboard, click **New Space**.
+
+    Enter a name like `My Project Docs` and select a color (e.g., brand orange `#ef7025`).
+  </Step>
+  <Step title="Add Your First Document" icon="file-text">
+    Inside the space, select **New Document**.
+
+    Choose a template or start blank. Title it `Quickstart Notes`.
+  </Step>
+</Steps>
+
+## Navigate the Dashboard
+
+Use the intuitive dashboard to manage your content efficiently.
+
+<Tabs>
+  <Tab title="Desktop View" icon="monitor">
+    - **Sidebar**: Lists all doc spaces and recent documents.
+    - **Search Bar**: Quickly find docs with full-text search.
+    - **Quick Actions**: Buttons for new spaces, docs, or imports.
+
+    <Image
+      src="https://via.placeholder.com/800x400/ef7025/white?text=Dashboard+Desktop"
+      alt="Bryce Arce desktop dashboard overview"
+      width="800"
+      height="400"
+    />
+  </Tab>
+  <Tab title="Mobile View" icon="smartphone">
+    - Tap the menu icon to access spaces.
+    - Swipe to navigate between documents.
+    - Use the floating action button (+) for new content.
+  </Tab>
+</Tabs>
+
+## Add and Organize Documents
+
+Build your documentation structure.
+
+```javascript
+// Example: Embedding a doc link in your app (if integrating)
+const docUrl = 'https://brycearce.com/spaces/my-project/quickstart';
+window.open(docUrl, '_blank');
+```
+
+<Board title="Sample Document Workflow">
+  <BoardColumn title="To Do" icon="circle-dot">
+    <BoardCard title="Write Overview" description="Add intro to project" dueDate="2024-12-15" />
+    <BoardCard title="Add API Reference" />
+  </BoardColumn>
+  <BoardColumn title="In Progress" icon="loader">
+    <BoardCard title="User Guide" author="You" />
+  </BoardColumn>
+  <BoardColumn title="Done" icon="check-circle">
+    <BoardCard title="Quickstart" createdAt="2024-12-10" />
+  </BoardColumn>
+</Board>
+
+## Next Steps
+
+<Columns cols={2}>
+  <Card title="Deepen Authentication" icon="shield" href="/authentication">
+    Learn advanced Google OAuth flows and multi-account support.
+  </Card>
+  <Card title="Customization Guide" icon="settings" href="/configuration" horizontal>
+    Configure themes, integrations, and advanced features.
+  </Card>
+  <Card title="Full Guides" icon="book-open" href="/guides">
+    Explore detailed tutorials for power users.
+  </Card>
+  <Card title="Changelog" icon="git-branch" href="/changelog">
+    Stay updated with the latest releases and improvements.
+  </Card>
+</Columns>
+
+<Expandable title="Common Issues?" default-open="false">
+  - **Sign-in stuck?** Clear browser cache and try incognito mode.
+  - **Doc not saving?** Check internet connection and refresh.
+  - Need help? Contact support via the dashboard help icon.
+</Expandable>
+
+<Callout kind="success">
+  Congratulations! You're now set up and ready to organize your life with Bryce Arce—simple, secure, and always accessible.
+</Callout>
